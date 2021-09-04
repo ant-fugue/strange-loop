@@ -3,9 +3,9 @@ title: "OEISの数列を実装する"
 date: "2021-09-03"
 ---
 
-少し前から、オンラインの整数列大辞典 OEIS(https://oeis.org/)の数列をTypeScriptでちょこちょこ実装している。
+少し前から、オンラインの整数列大辞典 [OEIS](https://oeis.org/)の数列を TypeScript でちょこちょこ実装している。
 
-レポジトリ(https://github.com/searchingforapuppy/oeis)
+[レポジトリ](https://github.com/searchingforapuppy/oeis)
 
 ## 動機
 

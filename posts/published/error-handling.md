@@ -3,11 +3,7 @@ title: "'A mostly complete guide to error handling in JavaScript'を読んだ"
 date: "2021-09-03"
 ---
 
-普段、JS で同期的な処理を書いているときは、if 文でエラー処理を書いてから本体のコードを書くという形でエラー処理を実装している。しかし、Promise や async/await などの非同期処理が入ってきたときにどうエラー処理を書けばいいのかということについてよくわかっていなかった。そいで色々調べていくうちに、JavaScript におけるエラー処理を網羅してくれている素晴らしい記事を見つけた。
-
-原文(https://www.valentinog.com/blog/error/)
-
-翻訳(https://zenn.dev/yukiota/articles/cb53ea21d7cf3994861a)
+普段、JS で同期的な処理を書いているときは、if 文でエラー処理を書いてから本体のコードを書くという形でエラー処理を実装している。しかし、Promise や async/await などの非同期処理が入ってきたときにどうエラー処理を書けばいいのかということについてよくわかっていなかった。そいで色々調べていくうちに、JavaScript におけるエラー処理を網羅してくれている[素晴らしい記事](https://www.valentinog.com/blog/error/)を見つけた。（[日本語版](https://zenn.dev/yukiota/articles/cb53ea21d7cf3994861a)はこちら）
 
 ## 概要
 
@@ -32,5 +28,4 @@ try/catch が、setTimeout を使って投げれる例外をキャッチでき�
 
 ## 参考
 
-JavaScript の Error オブジェクトとして定義されているのは、以下の通り。
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors
+JavaScript の Error オブジェクトの詳細は[こちら](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors)
