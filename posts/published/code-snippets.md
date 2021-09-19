@@ -8,7 +8,7 @@ date: "2021-09-19"
 
 今回はこれ。
 
-```
+```python
 print('\n'.join(line.split(":",1)[0] for line in open("/etc/passwd")))
 ```
 
@@ -21,7 +21,7 @@ Iterable を引数に取り、文字列を返す
 join の前の"."は、Iterable の要素の区切りをどうやるか指定する
 下の例では例スペースを追加する。"\n"だったら改行を挿入する
 
-```
+```python
 words = ["How","are","you","doing","?"]
 sentence = ' '.join(words)
 print(sentence)
@@ -40,13 +40,13 @@ print(sentence)
 第一引数は各要素の区切り文字
 第二引数は split の上限を設定
 
-```
+```python
 >>> '1,2,3'.split(',')
 ['1', '2', '3']
 >>> '1,2,3'.split(',', maxsplit=1)
 ['1', '2,3']
 >>> '1,2,,3,'.split(',')
-['1', '2', '', '3', '']
+['1', '2', '',**** '3', '']
 ```
 
 以上を踏まえてこのスクリプトがやっているのは、
