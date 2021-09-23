@@ -1,5 +1,5 @@
 ---
-title: "コードスニペット"
+title: "Pythonでetc/passwdからユーザ名取得"
 date: "2021-09-19"
 ---
 
