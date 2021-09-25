@@ -7,7 +7,9 @@ date: "2021-09-25"
 
 [javascript-questions](https://github.com/lydiahallie/javascript-questions)の深掘りしたいトピック
 
-## Q1, Q2: var,let,const
+## Q1,Q2
+
+var と let の違いについての問題。
 
 | items         | const           | let             | var       |
 | :------------ | :-------------- | :-------------- | :-------- |
@@ -40,3 +42,18 @@ function test2() {
 test1();
 test2();
 ```
+
+## Q3
+
+ordinary function と arrow function の違い。
+arrow function は this との結びつきを持たないので、たとえば shape 内に`thisRad: () => this.radius`というメソッドを定義し、それを呼び出した場合、this.radius はオブジェクト内の radius を参照せず、undefined が返ってくる。
+
+他の違いはつぎのようなもの。
+
+[参考](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+- this や super への結びつけを持たないので、メソッドとして使用することはできない
+- arguments や new.target キーワードがない
+- call、apply、bind のような、一般にスコープの設定のためのメソッドとは併用できない
+- コンストラクターとして使用することはできない(new keyword を使ったオブジェクト生成に利用できない)
+- 本体内で yield を使用することはできない
