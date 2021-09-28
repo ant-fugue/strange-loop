@@ -28,7 +28,8 @@ export default function Post({ postData }) {
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>{postData.date}</div>
+        <div className={utilStyles.lightText}>created: {postData.created}</div>
+        {postData.created !== postData.updated && <div className={utilStyles.lightText}>updated: {postData.updated}</div>} 
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
