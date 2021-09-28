@@ -24,11 +24,11 @@ playSound()関数では、ユーザーが押したキーコードの読み取り
 
 ### 参考
 
-[Web Audio API の学習](https://developer.mozilla.org/ja/docs/Web/API/Web_Audio_API)
+[Web Audio API](https://developer.mozilla.org/ja/docs/Web/API/Web_Audio_API)
 
-[Document API の学習](https://developer.mozilla.org/ja/docs/Web/API/Document)
+[Document API](https://developer.mozilla.org/ja/docs/Web/API/Document)
 
-[CSS で使われる単位の整理](https://www.freecodecamp.org/news/css-unit-guide/)
+[CSS で使われる単位群](https://www.freecodecamp.org/news/css-unit-guide/)
 
 ## [2nd day](https://github.com/wesbos/JavaScript30/tree/master/02%20-%20JS%20and%20CSS%20Clock)
 
@@ -47,3 +47,27 @@ React とは異なり、vanillaJS を使って書く場合は、ドキュメン�
 ### 参考
 
 [Date オブジェクト](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+## [3rd day](https://github.com/wesbos/JavaScript30/tree/master/03%20-%20CSS%20Variables)
+
+画像のサイズ、鮮明度、背景色をスライダーで調節できるアプリ
+
+### ポイント
+
+画像のサイズ、鮮明度、背景色を調節するスライダーに、あらかじめデータサイズの単位を定義しておく。今回のケースでは px。
+
+選択されたスライダーから単位を読み取り、CSS Variable から対応する値を参照して、単位と連結してそのスライダーの style としてセットする関数を定義する
+
+上記の関数を、ユーザがスライダーを触った時、あるいはユーザがスライダーを掴んでマウスを動かした時に発火するイベントとして登録している
+
+###　感想
+
+CSS Variable は、普通のプログラミング言語の変数みたいに扱えて便利そうだなと思う一方で、生の JS でここまで扱うのは複雑すぎるように感じる。これを SPA や各種テンプレートエンジンと使うには、どうしたらいいのだろうか？
+
+### 参考
+
+[change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+
+[mousemove event](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event)
+
+[dataset property in HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
