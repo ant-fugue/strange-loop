@@ -1,6 +1,6 @@
 ---
 title: "三目並べをReact+AWS amplifyで作っている"
-date: "2020-09-09"
+created: "2020-09-09"
 ---
 
 ## 概要

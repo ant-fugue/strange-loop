@@ -1,6 +1,6 @@
 ---
 title: "知識のギャップを埋める"
-date: "2021-09-24"
+created: "2021-09-24"
 ---
 
 <https://jvns.ca/blog/2021/09/20/teaching-by-filling-in-knowledge-gaps/>

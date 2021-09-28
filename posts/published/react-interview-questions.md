@@ -1,6 +1,6 @@
 ---
 title: "React interview questions"
-date: "2021-09-23"
+created: "2021-09-23"
 ---
 
 [reactjs-interview-questions](https://github.com/sudheerj/reactjs-interview-questions)という GitHub レポジトリがある。スター数 16500 というかなり人気のレポジトリで、React,Redux,React Native など、React 関連の様々な Q&A を載せてくれている素晴らしいレポジトリである。

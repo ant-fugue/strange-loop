@@ -1,6 +1,6 @@
 ---
 title: "JavaScript questions"
-date: "2021-09-25"
+created: "2021-09-25"
 ---
 
 ## 概要

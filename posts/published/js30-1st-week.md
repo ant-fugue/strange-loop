@@ -1,6 +1,6 @@
 ---
 title: "JavaScript30, 1st week"
-date: "2021-09-24"
+created: "2021-09-24"
 ---
 
 HTML と CSS、特に CSS についての知識不足を最近痛感しているので、一度じっくりと基本を叩き込むために、[このレポジトリ](https://github.com/wesbos/JavaScript30)のソースコードをみっちり分析して、何も見ずに再現できるくらいにまでやっていく。
