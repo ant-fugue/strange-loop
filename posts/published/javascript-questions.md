@@ -57,3 +57,20 @@ arrow function は this との結びつきを持たないので、たとえば s
 - call、apply、bind のような、一般にスコープの設定のためのメソッドとは併用できない
 - コンストラクターとして使用することはできない(new keyword を使ったオブジェクト生成に利用できない)
 - 本体内で yield を使用することはできない
+
+## Q5
+
+ブラケット記法とドット記法の違いに関する問題。
+ドットの後に続くプロパティが、その実態は string であるのは考えてみると初学者にとってはややこしい。
+<https://codeburst.io/javascript-quickie-dot-notation-vs-bracket-notation-333641c0f781>
+
+## Q6
+
+JS において、あるオブジェクトに他のオブジェクトを代入する場合、参照渡しになるという例。両者ともに同じメモリを参照しているので、一方で値を変更したら、他方の値呼び出し結果も変わる。
+
+プリミティブ型の変数に関しては、値渡しが適用される。
+
+<https://developer.mozilla.org/ja/docs/Web/JavaScript/Data_structures>
+<https://qiita.com/migi/items/3417c2de685c368faab1>
+
+##
