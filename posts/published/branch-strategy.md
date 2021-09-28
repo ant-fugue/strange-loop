@@ -1,6 +1,7 @@
 ---
 title: "gitのブランチ戦略"
 created: "2021-09-13"
+updated: "2021-09-13"
 ---
 
 求人情報を眺めていると、GitHub Flow、git-flow という言葉を目にすることがあり、何のことか疑問に思いググったら、[この記事](https://qiita.com/trsn_si/items/cfecbf7dff20c64628ea)

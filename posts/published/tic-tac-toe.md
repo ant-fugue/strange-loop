@@ -1,6 +1,7 @@
 ---
 title: "三目並べをReact+AWS amplifyで作っている"
 created: "2020-09-09"
+updated: "2020-09-09"
 ---
 
 ## 概要

@@ -1,6 +1,7 @@
 ---
 title: "IF HEMINGWAY WROTE JAVASCRIPT"
 created: "2021-09-22"
+updated: "2021-09-22"
 ---
 
 吉田武先生の素数夜曲と並び、最も好きな技術書が[これ](https://anguscroll.com/hemingway/)である。

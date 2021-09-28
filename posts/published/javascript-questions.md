@@ -1,6 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
+updated: "2021-09-28"
 ---
 
 ## 概要

@@ -1,6 +1,7 @@
 ---
 title: "はじめてのCSSスタイリング"
 created: "2021-09-13"
+updated: "2021-09-13"
 ---
 
 これまで、CSS はほぼコピペするだけで、自分でほとんど書いたことがなかったので、ごく簡単にその変遷をまとめた。単純に[このポッドキャスト](https://anchor.fm/basuke-suzuki/episodes/CSS-with-kara_d-e15ph61)が面白く、興味を持ったというのもある。

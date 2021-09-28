@@ -1,6 +1,7 @@
 ---
 title: "OEISの数列を実装する"
 created: "2021-09-03"
+updated: "2021-09-03"
 ---
 
 少し前から、オンラインの整数列大辞典 [OEIS](https://oeis.org/)の数列を TypeScript でちょこちょこ実装している。

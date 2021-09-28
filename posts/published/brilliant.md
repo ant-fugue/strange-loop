@@ -1,6 +1,7 @@
 ---
 title: "Brilliantによる数学再訪"
 created: "2021-09-15"
+updated: "2021-09-15"
 ---
 
 [Rebuild.fm のこの回](https://rebuild.fm/315/)で、higepon さんが iPad とタッチペンを使ってコツコツと数学の教科書を勉強してきた話を聴き、素晴らしい取り組みだと思ったのでぼくも真似することにした。
