@@ -1,7 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
-updated: "2021-09-28"
+updated: "2021-09-30"
 ---
 
 ## 概要
@@ -22,6 +22,7 @@ var と let の違いについての問題。
 Q1 は hoisting に関連する問題。「宣言なくして初期化なし」が let と const の特徴である。
 
 Q2 は JS の実行モデルが関わってくるのでややこしいが、要するに関数スコープとブロックスコープの違いを問うている。
+
 下のスクリプトにおいて、test1()の var で宣言された変数 x は、関数内で有効なので 1 を出力するが、test2()の let で宣言された変数 x は、{}内でのみ有効なので console.log(x)はエラーとなる。
 
 ```JavaScript
@@ -49,21 +50,18 @@ test2();
 ordinary function と arrow function の違い。
 arrow function は this との結びつきを持たないので、たとえば shape 内に`thisRad: () => this.radius`というメソッドを定義し、それを呼び出した場合、this.radius はオブジェクト内の radius を参照せず、undefined が返ってくる。
 
-他の違いはつぎのようなもの。
+### 参考
 
-[参考](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-
-- this や super への結びつけを持たないので、メソッドとして使用することはできない
-- arguments や new.target キーワードがない
-- call、apply、bind のような、一般にスコープの設定のためのメソッドとは併用できない
-- コンストラクターとして使用することはできない(new keyword を使ったオブジェクト生成に利用できない)
-- 本体内で yield を使用することはできない
+[アロー関数の概要](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ## Q5
 
 ブラケット記法とドット記法の違いに関する問題。
 ドットの後に続くプロパティが、その実態は string であるのは考えてみると初学者にとってはややこしい。
-<https://codeburst.io/javascript-quickie-dot-notation-vs-bracket-notation-333641c0f781>
+
+### 参考
+
+[JavaScript Quickie— Dot Notation vs. Bracket Notation](https://codeburst.io/javascript-quickie-dot-notation-vs-bracket-notation-333641c0f781)
 
 ## Q6
 
@@ -71,7 +69,24 @@ JS において、あるオブジェクトに他のオブジェクトを代入�
 
 プリミティブ型の変数に関しては、値渡しが適用される。
 
-<https://developer.mozilla.org/ja/docs/Web/JavaScript/Data_structures>
-<https://qiita.com/migi/items/3417c2de685c368faab1>
+### 参考
 
-##
+[データ型一覧](https://developer.mozilla.org/ja/docs/Web/JavaScript/Data_structures)
+
+[値渡しと参照渡し](https://qiita.com/migi/items/3417c2de685c368faab1)
+
+## Q8
+
+クラスからインスタンスを new 演算子で生成した時、クラスで static に定義されたメソッドの扱いがどうなるのか、という問題。
+
+new 演算子は組み込みやユーザ定義のクラス(より正確にはオブジェクト型)から、メソッドやプロパティを継承したインスタンスを生成する機能である。
+
+ただし、クラスにおいて、static で定義されたメソッドやプロパティは、new で生成したインスタンスに渡されない
+
+この問題では、最後の行の`console.log(freddie.colorChange('orange'));`によって、インスタンスには継承されない static なメソッドである colorChange にアクセスしようとしているので、エラーになる。
+
+freddie インスタンスが colorChange を継承していないのは、`"colorChange" in freddie`の返り値が undefined になることによっても確かめられる
+
+### 参考
+
+[new 演算子](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/new)
