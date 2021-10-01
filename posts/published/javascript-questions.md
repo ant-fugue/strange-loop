@@ -1,7 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
-updated: "2021-09-30"
+updated: "2021-10-01"
 ---
 
 ## 概要
@@ -90,3 +90,14 @@ freddie インスタンスが colorChange を継承していないのは、`"col
 ### 参考
 
 [new 演算子](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/new)
+
+## Q11
+
+プロパティやメソッドのプロトタイプ継承についての問題。これまで、prototype の仕様について、よく理解しないまま書いてきたので、この問題は学習のよいきっかけになった。
+
+[MDN の記事](https://developer.mozilla.org/ja/docs/Web/JavaScript/Inheritance_and_the_prototype_chain#using_prototypes_in_javascript)によると、オブジェクトのメソッドにアクセスした場合、prototype をどんどんさかのぼっていき、それ以上先の prototype がない場合(null を返す場合)に、undefined を返すというメカニズムらしい。
+
+この問題の場合、Person へのメソッド追加に prototype がないため、子オブジェクトには追加されたメソッドが継承されない。
+そのことは、`"getFullName" in member`が false を返すことで確かめられる。
+
+<!-- [オブジェクトのプロパティにアクセスする方法の一覧](accessing-js-properties) ->  -->
