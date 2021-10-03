@@ -101,3 +101,11 @@ freddie インスタンスが colorChange を継承していないのは、`"col
 そのことは、`"getFullName" in member`が false を返すことで確かめられる。
 
 <!-- [オブジェクトのプロパティにアクセスする方法の一覧](accessing-js-properties) ->  -->
+
+## Q12
+
+new キーワードの有無で、インスタンスの挙動がどう変わるのかを問う問題。
+
+## Q16
+
+postfix な incremental 演算子と、 prefix な incremental 演算子の違いを問う問題。普段は postfix なバージョンを使うので、後者を使うべき場面というのが思いつかないな。。
