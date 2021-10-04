@@ -108,7 +108,7 @@ new キーワードの有無で、インスタンスの挙動がどう変わる�
 
 ## Q16
 
-postfix な incremental 演算子と、 prefix な incremental 演算子の違いを n 問う問題。普段は postfix なバージョンを使うので、後者を使うべき場面というのが思いつかないな。。
+postfix な incremental 演算子と、 prefix な incremental 演算子の違いを問う問題。普段は postfix なバージョンを使うので、後者を使うべき場面というのが思いつかないな。。
 
 ## Q17
 
@@ -121,3 +121,7 @@ postfix な incremental 演算子と、 prefix な incremental 演算子の違�
 ### 参考
 
 [テンプレートリテラル (テンプレート文字列)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
+
+<!-- ## Q18
+
+JS において等値性をどう扱うかと問題。これは非常に深いテーマ。 -->
