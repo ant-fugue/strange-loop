@@ -122,6 +122,10 @@ postfix な incremental 演算子と、 prefix な incremental 演算子の違�
 
 [テンプレートリテラル (テンプレート文字列)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
 
-<!-- ## Q18
+## Q18
 
-JS において等値性をどう扱うかと問題。これは非常に深いテーマ。 -->
+==と\===の違いを問う問題。型変換した結果での等値性を調べる必要がある場面はほぼないので、\===をいつも使っている。あとは Object.is()も等値性比較に使えるが、これでないといけない場面はまだ出会ったことがない。Jest や Chai などのユニットテストライブラリの内部実装とかで使われているんだろうか？
+
+### 参考
+
+[等価性の比較と同一性](https://developer.mozilla.org/ja/docs/Web/JavaScript/Equality_comparisons_and_sameness)
