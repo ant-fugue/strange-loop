@@ -1,7 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
-updated: "2021-10-01"
+updated: "2021-10-06"
 ---
 
 ## 概要
@@ -50,16 +50,12 @@ test2();
 ordinary function と arrow function の違い。
 arrow function は this との結びつきを持たないので、たとえば shape 内に`thisRad: () => this.radius`というメソッドを定義し、それを呼び出した場合、this.radius はオブジェクト内の radius を参照せず、undefined が返ってくる。
 
-### 参考
-
 [アロー関数の概要](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ## Q5
 
 ブラケット記法とドット記法の違いに関する問題。
 ドットの後に続くプロパティが、その実態は string であるのは考えてみると初学者にとってはややこしい。
-
-### 参考
 
 [JavaScript Quickie— Dot Notation vs. Bracket Notation](https://codeburst.io/javascript-quickie-dot-notation-vs-bracket-notation-333641c0f781)
 
@@ -68,8 +64,6 @@ arrow function は this との結びつきを持たないので、たとえば s
 JS において、あるオブジェクトに他のオブジェクトを代入する場合、参照渡しになるという例。両者ともに同じメモリを参照しているので、一方で値を変更したら、他方の値呼び出し結果も変わる。
 
 プリミティブ型の変数に関しては、値渡しが適用される。
-
-### 参考
 
 [データ型一覧](https://developer.mozilla.org/ja/docs/Web/JavaScript/Data_structures)
 
@@ -86,8 +80,6 @@ new 演算子は組み込みやユーザ定義のクラス(より正確にはオ
 この問題では、最後の行の`console.log(freddie.colorChange('orange'));`によって、インスタンスには継承されない static なメソッドである colorChange にアクセスしようとしているので、エラーになる。
 
 freddie インスタンスが colorChange を継承していないのは、`"colorChange" in freddie`の返り値が undefined になることによっても確かめられる
-
-### 参考
 
 [new 演算子](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/new)
 
@@ -118,14 +110,33 @@ postfix な incremental 演算子と、 prefix な incremental 演算子の違�
   - ソースの中に挿入された改行文字は、すべてテンプレートリテラルの一部になる(\n がいらない)
   - 本問のように、関数名+テンプレートリテラル文字列の組み合わせをタグ付きテンプレートリテラルとよび、関数の最初の引数が文字列の配列となり、残りの引数が式に渡される
 
-### 参考
-
 [テンプレートリテラル (テンプレート文字列)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
 
 ## Q18
 
 ==と\===の違いを問う問題。型変換した結果での等値性を調べる必要がある場面はほぼないので、\===をいつも使っている。あとは Object.is()も等値性比較に使えるが、これでないといけない場面はまだ出会ったことがない。Jest や Chai などのユニットテストライブラリの内部実装とかで使われているんだろうか？
 
-### 参考
-
 [等価性の比較と同一性](https://developer.mozilla.org/ja/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+
+## Q19
+
+Rest parameters(残余引数)についての問題。Rest parameters は、不定数の引数を配列として関数に渡し、処理するために使われる。同様の使い方をするための仕組みとして、ES6 以前は arguments オブジェクトが使われていた。両者の違いは、それが配列であるか否かである。
+
+```JavaScript
+function getAge(...args) {
+  // typeofでは同様の値を表示するが
+  console.log(typeof arguments);
+  console.log(typeof args);
+
+  // argumentsは配列ではない
+  console.log(Array.isArray(args));
+  console.log(Array.isArray(arguments));
+  console.log(Array.isArray(Array.from(arguments)));
+}
+
+getAge(21);
+```
+
+[残余引数](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+
+<!-- ## Q20 -->
