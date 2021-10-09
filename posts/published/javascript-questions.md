@@ -139,4 +139,12 @@ getAge(21);
 
 [残余引数](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
-<!-- ## Q20 -->
+## Q20
+
+Strict モードの挙動に関する問題。Strict モードで変更される挙動は多岐に渡るが、大雑把にまとめると、次のような特徴がある。
+
+- JavaScript モジュールでインポートされたモジュールは自動的に Strict モードになる
+- 過去に宣言のなかったグローバル変数への代入は ReferenceError になる
+- 通常のモードでは暗黙に失敗するミス（主に代入に関連するもの）を、例外を発生させるエラーとして扱う
+- eval や arguments など、扱いの難しい関数の機能や影響範囲を制限する
+- 将来の ECMAScript で導入される可能性のある予約語を、変数や引数の名前として使えなくする
