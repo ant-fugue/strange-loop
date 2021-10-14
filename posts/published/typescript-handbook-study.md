@@ -1,7 +1,7 @@
 ---
 title: "TypeScript handbook メモ"
 created: "2021-10-05"
-updated: "2021-10-05"
+updated: "2021-10-09"
 ---
 
 ## Everyday Types
@@ -18,5 +18,21 @@ function printName(obj: { first: string; last?: string }) {
   }
 
   console.log(obj.last?.toUpperCase());
+}
+```
+
+### union
+
+union type を使う場合、型の違いによって異なる処理をする場合がある。このとき、typeof や Array.isArray()など、対象の型判定をする関数を使って条件分岐させる。
+
+```JavaScript
+function printId(id: number | string) {
+  if (typeof id === "string") {
+    // In this branch, id is of type 'string'
+    console.log(id.toUpperCase());
+  } else {
+    // Here, id is of type 'number'
+    console.log(id);
+  }
 }
 ```
