@@ -1,7 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
-updated: "2021-10-23"
+updated: "2021-10-24"
 ---
 
 ## 概要
@@ -161,3 +161,7 @@ JS の Storage API についての問題。
 <https://developer.mozilla.org/ja/docs/Web/API/Storage>
 
 Storage API は一見便利そうだけれども、[この記事](https://www.rdegges.com/2018/please-stop-using-local-storage/)をみると、ごく簡単でユーザ登録が不要なアプリを除き、使用は避けた方が良さそう。
+
+## Q25
+
+重複する key がオブジェクトに存在する場合、対応する値には何が選ばれるか、という問題で、最後に追加された値が選ばれる。これは多くの場合、同様の値が存在することを知らずに追加してしまうというケースだと予想されるので、避けたい挙動のはず。TypeScript を導入するしかエラー検知の方法はないのか？
