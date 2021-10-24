@@ -1,7 +1,7 @@
 ---
 title: "TypeScript handbook メモ"
 created: "2021-10-05"
-updated: "2021-10-14"
+updated: "2021-10-24"
 ---
 
 ## Everyday Types
@@ -55,4 +55,28 @@ const myCanvas =
 const x = "hello" as number;
 // no error
 const y = "hello" as any as number;
+```
+
+<!-- null and undefined -->
+
+## Narrowing
+
+関数の引数として渡される値の型によって、以降の処理を分岐させるのはよくあるパターンである。その分岐を処理するための方法には、さまざまなものがある。
+
+### typeof type guards
+
+JS の typeof 演算子を使って、条件分岐をさせる方法。わざわざ TS で書く必要はないように感じるが、typeof 演算子は歴史的経緯により null も object と表現してしまうので、コメントがないと入力値が Array や Function と null との区別ができないという問題がある。よって、TS で入力値として null を明示的に指定することには一定の意義がある。
+
+```JavaScript
+function printAll(strs: string | string[] | null) {
+  if (typeof strs === "object") {
+    for (const s of strs) {
+      console.log(s);
+    }
+  } else if (typeof strs === "string") {
+    console.log(strs);
+  } else {
+    // do nothing
+  }
+}
 ```
