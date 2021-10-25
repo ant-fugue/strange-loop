@@ -1,7 +1,7 @@
 ---
 title: "TypeScript handbook メモ"
 created: "2021-10-05"
-updated: "2021-10-24"
+updated: "2021-10-25"
 ---
 
 ## Everyday Types
@@ -77,6 +77,42 @@ function printAll(strs: string | string[] | null) {
     console.log(strs);
   } else {
     // do nothing
+  }
+}
+```
+
+### Truthiness narrowing
+
+if 文の条件節で、true/false に変換される値を使って条件分岐をする方法。先程の printAll()関数は、たとえば次のように書き換えられる。
+
+```JavaScript
+function printAll(strs: string | string[] | null) {
+  // utilize the fact that not empty string is coerced to true
+  // eliminate the possibility of null
+  if (strs && typeof strs === "object") {
+    for (const s of strs) {
+      console.log(s);
+    }
+  } else if (typeof strs === "string") {
+    console.log(strs);
+  }
+}
+```
+
+しかし、これは入力値が null の場合をどう管理するかということを考えると、他に良い解決策がありそう。引数の型の null 自体を削除するか、あるいは次のようにはじめで null の値をはじいてしまうとか。
+
+```JavaScript
+function printAll(strs: string | string[] | null) {
+  if (!strs) {
+    console.log("null!!");
+  }
+
+  if (strs && typeof strs === "object") {
+    for (const s of strs) {
+      console.log(s);
+    }
+  } else if (typeof strs === "string") {
+    console.log(strs);
   }
 }
 ```
