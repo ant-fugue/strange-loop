@@ -116,3 +116,20 @@ function printAll(strs: string | string[] | null) {
   }
 }
 ```
+
+### instanceof narrowing
+
+JS の instanceof 演算子を使って条件分岐をする方法。Handbook にも書かれている通り、クラスとそこから new で生成するオブジェクトの種類のよって処理を分岐させたいときに使うのだろう。
+
+```TypeScript
+function logValue(x: Date | string) {
+  if (x instanceof Date) {
+    console.log(x.toUTCString());
+  } else {
+    console.log(x.toUpperCase());
+  }
+}
+
+logValue("this");
+logValue(new Date("1995-12-17T03:24:00"));
+```
