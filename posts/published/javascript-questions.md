@@ -1,7 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
-updated: "2021-10-24"
+updated: "2021-10-28"
 ---
 
 ## 概要
@@ -169,3 +169,30 @@ Storage API は一見便利そうだけれども、[この記事](https://www.rd
 ## Q29
 
 オブジェクトの key を文字列に変換するとき、その key が\[object Object\]になってしまうという奇妙な挙動を取り上げた問題。これは一体なぜ？
+
+## Q33
+
+this が指すコンテクストに対して何らかの操作を施す call や bind の特徴を問う問題。
+
+```JavaScript
+const person = { name: "Lydia" };
+
+function sayHi(age) {
+  return `${this.name} is ${age}`;
+}
+
+
+console.log(sayHi.call(person, 21));
+
+// bindを挟むことで、関数の実行タイミングを遅らせることができる
+console.log(sayHi.bind(person, 21).call());
+console.log(sayHi.bind(person, 21).apply());
+```
+
+```JavaScript
+const numbers = [5, 6, 2, 3, 7];
+
+// applyとcallの違い
+console.log(Math.max.apply(null, numbers));
+console.log(Math.max.call(null, 5, 6, 2, 3, 7));
+```
