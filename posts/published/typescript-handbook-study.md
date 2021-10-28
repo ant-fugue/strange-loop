@@ -1,7 +1,7 @@
 ---
 title: "TypeScript handbook メモ"
 created: "2021-10-05"
-updated: "2021-10-25"
+updated: "2021-10-28"
 ---
 
 ## Everyday Types
@@ -132,4 +132,24 @@ function logValue(x: Date | string) {
 
 logValue("this");
 logValue(new Date("1995-12-17T03:24:00"));
+```
+
+### using type predicates
+
+JS の演算子ではなく、TS の機能を直接使って型による条件分岐をしたいときは、返り値に type predicates を指定して、どんな型が帰ってくるのかを明示的に指定する方法が使える。
+
+```TypeScript
+interface Fish {
+  swim: true;
+}
+
+interface Bird {
+  sing: true;
+}
+
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+console.log(isFish({ swim: true }));
 ```
