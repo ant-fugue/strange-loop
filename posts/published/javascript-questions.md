@@ -196,3 +196,9 @@ const numbers = [5, 6, 2, 3, 7];
 console.log(Math.max.apply(null, numbers));
 console.log(Math.max.call(null, 5, 6, 2, 3, 7));
 ```
+
+### Q35
+
+if 文や三項演算子の条件節の真偽判定において、false となる値、すなわち falsy values は何かという問題。これは暗記するか、すぐに参照できるようにしておきたい知識である。
+
+<!-- ### 38 -->
