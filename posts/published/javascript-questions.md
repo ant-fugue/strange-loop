@@ -1,7 +1,7 @@
 ---
 title: "JavaScript questions"
 created: "2021-09-25"
-updated: "2021-10-28"
+updated: "2021-10-31"
 ---
 
 ## 概要
@@ -96,7 +96,9 @@ freddie インスタンスが colorChange を継承していないのは、`"col
 
 ## Q12
 
-new キーワードの有無で、インスタンスの挙動がどう変わるのかを問う問題。
+new キーワードの有無で、インスタンスの挙動がどう変わるのかを問う問題。new なしだと、this のコンテクストはグローバルオブジェクトを参照する。
+
+<!-- newなしだとPerson()の返り値がないので、undefinedが代入される -->
 
 ## Q16
 
@@ -139,6 +141,8 @@ getAge(21);
 
 [残余引数](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 
+<!-- TODO TypeScriptで残余引数を使う場合の型指定の方法について書く -->
+
 ## Q20
 
 Strict モードの挙動に関する問題。Strict モードで変更される挙動は多岐に渡るが、大雑把にまとめると、次のような特徴がある。
@@ -165,6 +169,8 @@ Storage API は一見便利そうだけれども、[この記事](https://www.rd
 ## Q25
 
 重複する key がオブジェクトに存在する場合、対応する値には何が選ばれるか、という問題で、最後に追加された値が選ばれる。これは多くの場合、同様の値が存在することを知らずに追加してしまうというケースだと予想されるので、避けたい挙動のはず。TypeScript を導入するしかエラー検知の方法はないのか？
+
+<!-- TODO TypeScriptを使った上書き回避策か、JSでの回避策を書く -->
 
 ## Q29
 
@@ -201,4 +207,49 @@ console.log(Math.max.call(null, 5, 6, 2, 3, 7));
 
 if 文や三項演算子の条件節の真偽判定において、false となる値、すなわち falsy values は何かという問題。これは暗記するか、すぐに参照できるようにしておきたい知識である。
 
-<!-- ### 38 -->
+### Q40
+
+reduce()の挙動を問う問題。reduce()は非常に便利な関数だけれども、渡せる引数の数や形式のオプションが多く、それぞれ挙動も異なってくるので注意深く使う必要がある。
+
+例(
+<https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce>のコードを編集)：
+
+```JavaScript
+const getMax = (a, b) => Math.max(a, b);
+
+/*
+init: 50
+arr[0] -> 1 -> getMax(50, 1) -> 50
+arr[1] -> 100 -> getMax(50, 100) -> 100
+*/
+console.log([1, 100].reduce(getMax, 50)); // 100
+
+/*
+init: 10
+arr[0] -> 50 -> getMax(10, 50) -> 50
+*/
+console.log([50].reduce(getMax, 10)); // 50
+
+/*
+init: empty -> arr[0] -> 1
+arr[1] -> getMax(1, 100) -> 100
+*/
+console.log([1, 100].reduce(getMax)); // 100
+
+/*
+init: empty -> arr[0] -> 50
+callback is not called
+*/
+console.log([50].reduce(getMax)); // 50
+
+/*
+init: 1
+callback is not called
+ */
+console.log([].reduce(getMax, 1)); // 1
+
+// TypeError
+console.log([].reduce(getMax));
+```
+
+<!-- TODO deep dive to reduce -->
