@@ -153,3 +153,44 @@ function isFish(pet: Fish | Bird): pet is Fish {
 
 console.log(isFish({ swim: true }));
 ```
+
+### Exhaustiveness checking
+
+never を使ったエラーハンドリング
+
+<!-- https://qiita.com/macololidoll/items/1c948c1f1acb4db6459e -->
+
+```TypeScript
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Square {
+  kind: "square";
+  sideLength: number;
+}
+
+interface Triangle {
+  kind: "triangle";
+  sideLnegth: number;
+}
+
+type Shape = Circle | Square | Triangle;
+
+function getArea(shape: Shape) {
+  switch (shape.kind) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "square":
+      return shape.sideLength ** 2;
+    default:
+      // defaultでcircleとsquare以外の可能性はneverとされている -> それ以外の可能性は存在しない
+      // よって、Triangleという型を持つ変数が存在する可能性もないはずなので、エラーが出る
+      const _exhaustiveCheck: never = shape;
+      return _exhaustiveCheck;
+  }
+}
+```
+
+## More on Functions

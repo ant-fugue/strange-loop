@@ -92,13 +92,40 @@ freddie インスタンスが colorChange を継承していないのは、`"col
 この問題の場合、Person へのメソッド追加に prototype がないため、子オブジェクトには追加されたメソッドが継承されない。
 そのことは、`"getFullName" in member`が false を返すことで確かめられる。
 
-<!-- [オブジェクトのプロパティにアクセスする方法の一覧](accessing-js-properties) ->  -->
+<!--
+- オブジェクトの継承元を特定する
+  - Object.getPrototypeOf(obj)
+  - obj.\_\_proto\_\_\
+- オブジェクトのプロパティを列挙する
+  - Object.getPropertyNames(obj)
+- オブジェクトのメソッドを列挙する
+- オブジェクトがあるプロパティを持つかどうかを確認する
+  - property in obj
+    - 継承元まで含めてチェックする
+  - Object.getOwnProperty(obj)
+    - 継承元はチェックしない
+- オブジェクトの継承元を変更する
+  - Object.getPrototypeOf(obj)
+ -->
 
 ## Q12
 
 new キーワードの有無で、インスタンスの挙動がどう変わるのかを問う問題。new なしだと、this のコンテクストはグローバルオブジェクトを参照する。
 
-<!-- newなしだとPerson()の返り値がないので、undefinedが代入される -->
+```JavaScript
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const lydia = new Person("Lydia", "Hallie");
+const sarah = Person("Sarah", "Smith");
+
+console.log(lydia);
+console.log(global.firstName);
+console.log(global.lastName);
+console.log(sarah);
+```
 
 ## Q16
 
@@ -253,3 +280,27 @@ console.log([].reduce(getMax));
 ```
 
 <!-- TODO deep dive to reduce -->
+
+<!-- ### Q44 -->
+
+<!-- <https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Iterators_and_Generators> -->
+
+<!-- TODO deep dive to generator -->
+
+### Q45
+
+<https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Iterators_and_Generators>
+
+### Q46
+
+<!-- 超重要！！ -->
+
+## Q68
+
+```JavaScript
+console.log(new Number(2) === new Number(2));
+console.log(new Boolean(false) === new Boolean(false));
+console.log(new Symbol("foo") === new Symbol("foo"));
+```
+
+<!-- Number()と Boolean()は、new 演算子なしだとプリミティブを生成する関数なのかな？ -->
